@@ -33,17 +33,17 @@ public class BinaryTree {
         tree.root.right.left = new TreeNode(15);
         tree.root.right.right = new TreeNode(25);
 
-        System.out.println("Search Value 2 is in tree? " + searchIteratively(tree.root, 2));
-        System.out.println("Search Value 10 in tree? " + searchIteratively(tree.root, 10));
-        System.out.println("Inserting value 3: " + insertionIterative(tree.root,3));
-        System.out.println("Search Value 3 tree? " + searchIteratively(tree.root, 3));
-        System.out.println("Search Value 4 tree? " + searchIteratively(tree.root, 4));
-        deleteNodeIteratively(tree.root,4);
-        System.out.println("Search Value 4 tree? " + searchIteratively(tree.root, 4));
+        System.out.println("Search Value 2 is in tree? " + lookup(tree.root, 2));
+        System.out.println("Search Value 10 in tree? " + lookup(tree.root, 10));
+        System.out.println("Inserting value 3: " + insert(tree.root,3));
+        System.out.println("Search Value 3 tree? " + lookup(tree.root, 3));
+        System.out.println("Search Value 4 tree? " + lookup(tree.root, 4));
+        delete(tree.root,4);
+        System.out.println("Search Value 4 tree? " + lookup(tree.root, 4));
     }
     
     
-    public static boolean searchIteratively(TreeNode root, int value) {
+    public static boolean lookup(TreeNode root, int value) {
 
         while (root != null) {
             if ((int) root.data == value)
@@ -59,7 +59,7 @@ public class BinaryTree {
         return false;
     }
 
-    public static TreeNode insertionIterative(TreeNode root, int value) {
+    public static TreeNode insert(TreeNode root, int value) {
 
         TreeNode current, parent;
 
@@ -94,7 +94,7 @@ public class BinaryTree {
         }
     }
 
-    public static TreeNode deleteNodeIteratively(TreeNode root, int value) {
+    public static TreeNode delete(TreeNode root, int value) {
         TreeNode parent = null, current = root;
         boolean hasLeft = false;
 

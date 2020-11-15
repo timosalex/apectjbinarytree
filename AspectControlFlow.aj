@@ -1,10 +1,10 @@
-public aspect TestAspect{
+public aspect AspectControlFlow{
 	
 	private ReadWriteLock rwl=new ReadWriteLock();
 	
-	pointcut lookUp(): call(boolean BinaryTree.searchIteratively(BinaryTree.TreeNode, int));
-	pointcut insert(): call(BinaryTree.TreeNode BinaryTree.insertionIterative(BinaryTree.TreeNode, int));
-	pointcut delete(): call(BinaryTree.TreeNode BinaryTree.deleteNodeIteratively(BinaryTree.TreeNode, int));
+	pointcut lookUp(): call(boolean BinaryTree.lookup(BinaryTree.TreeNode, int));
+	pointcut insert(): call(BinaryTree.TreeNode BinaryTree.insert(BinaryTree.TreeNode, int));
+	pointcut delete(): call(BinaryTree.TreeNode BinaryTree.delete(BinaryTree.TreeNode, int));
 
 	
 		before(): lookUp(){
