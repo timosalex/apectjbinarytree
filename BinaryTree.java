@@ -118,19 +118,19 @@ public class BinaryTree {
 
 
         if (parent == null) {
-            return deleteNodeIteratively(current);
+            return deleteNode(current);
         }
 
         if (hasLeft) {
-            parent.left = deleteNodeIteratively(current);
+            parent.left = deleteNode(current);
         } else {
-            parent.right = deleteNodeIteratively(current);
+            parent.right = deleteNode(current);
         }
 
         return root;
     }
 
-    private static TreeNode deleteNodeIteratively(TreeNode node) {
+    private static TreeNode deleteNode(TreeNode node) {
 
         if (node != null) {
             if (node.left == null && node.right == null) {
